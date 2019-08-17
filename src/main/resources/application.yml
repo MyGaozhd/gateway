@@ -1,0 +1,18 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: gateway
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+     defaultZone: http://localhost:8888/eureka/
+zuul:
+  routes:
+    gateway:
+       path: /*
+       serviceId: consumer
+
+
